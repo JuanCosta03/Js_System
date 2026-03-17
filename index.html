@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCSystem | Sistemas Inteligentes de Gestão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de navegação superior -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <span class="logo-text">JCSystem</span>
+            </a>
+            
+            <!-- Menu Principal -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span>Produtos</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-section">
+                                <h4>Sistemas JCSystem</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#comercio-plus">
+                                            <i class="fas fa-store"></i>
+                                            <div>
+                                                <strong>Comércio+ Manager</strong>
+                                                <p>Sistema completo para gestão de qualquer negócio</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-industry"></i>
+                                            <div>
+                                                <strong>Indústria+ Pro</strong>
+                                                <p>Em breve - Sistema para produção industrial</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h4>Por Empresa</h4>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-wine-bottle"></i> Varejo & Comércio</a></li>
+                                    <li><a href="#"><i class="fas fa-utensils"></i> Restaurantes</a></li>
+                                    <li><a href="#"><i class="fas fa-car"></i> Serviços Automotivos</a></li>
+                                    <li><a href="#"><i class="fas fa-stethoscope"></i> Saúde & Beleza</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#solutions" class="nav-link">Soluções</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">Recursos</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link">Preços</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#support" class="nav-link">Suporte</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre</a>
+                </li>
+            </ul>
+            
+            <!-- Ações do usuário -->
+            <div class="nav-actions">
+                <a href="#login" class="btn-login" id="openLogin">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </a>
+                <a href="#demo" class="btn-primary">
+                    Testar Grátis
+                </a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-new">NOVO</span>
+                <span>Comércio+ Manager v2.0</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="hero-line">A Gestão Inteligente</span>
+                <span class="hero-line highlight">que seu Negócio Merece</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Sistema completo para controlar vendas, estoque, finanças e lucros
+                de qualquer tipo de empresa. Simples, poderoso e acessível.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#demo" class="btn-hero-primary">
+                    <i class="fas fa-play-circle"></i>
+                    Ver Demonstração
+                </a>
+                <a href="#pricing" class="btn-hero-secondary">
+                    <i class="fas fa-tags"></i>
+                    Ver Planos
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">+200</span>
+                    <span class="stat-label">Empresas atendidas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Disponibilidade</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Suporte</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">R$0</span>
+                    <span class="stat-label">Instalação</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="floating-screens">
+                <div class="screen screen-1">
+                    <div class="screen-content" style="background: linear-gradient(135deg, #0000FF, #3366FF);">
+                        <div class="screen-header"></div>
+                        <div class="screen-chart"></div>
+                    </div>
+                </div>
+                <div class="screen screen-2">
+                    <div class="screen-content" style="background: linear-gradient(135deg, #3366FF, #0000CC);">
+                        <div class="screen-header"></div>
+                        <div class="screen-list"></div>
+                    </div>
+                </div>
+                <div class="screen screen-3">
+                    <div class="screen-content" style="background: linear-gradient(135deg, #0000CC, #0000FF);">
+                        <div class="screen-header"></div>
+                        <div class="screen-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Descubra mais</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Soluções -->
+    <section id="solutions" class="section-solutions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">SOLUÇÕES COMPLETAS</span>
+                <h2 class="section-title">Um Sistema para Cada Necessidade</h2>
+                <p class="section-description">
+                    Escolha o sistema perfeito para o seu tipo de negócio
+                </p>
+            </div>
+            
+            <div class="solutions-grid">
+                <!-- Solução 1 -->
+                <div class="solution-card" id="comercio-plus">
+                    <div class="solution-icon">
+                        <i class="fas fa-store-alt"></i>
+                    </div>
+                    <h3>Comércio+ Manager</h3>
+                    <p class="solution-description">
+                        Sistema completo para lojas, comércio em geral, varejo e atacado.
+                    </p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Controle de Estoque Avançado</li>
+                        <li><i class="fas fa-check-circle"></i> Vendas com Cálculo de Lucro Inteligente</li>
+                        <li><i class="fas fa-check-circle"></i> Gestão Financeira Completa</li>
+                        <li><i class="fas fa-check-circle"></i> Relatórios Personalizados</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-Usuários</li>
+                    </ul>
+                    <div class="solution-actions">
+                        <a href="#login" class="btn-solution open-login">
+                            <i class="fas fa-rocket"></i>
+                            Acessar Sistema
+                        </a>
+                        <a href="#demo-comercio" class="btn-solution-outline">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Solução 2 (Em breve) -->
+                <div class="solution-card coming-soon">
+                    <div class="solution-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <span class="coming-soon-badge">EM BREVE</span>
+                    <h3>Indústria+ Pro</h3>
+                    <p class="solution-description">
+                        Controle de produção, qualidade e logística para indústrias.
+                    </p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-clock"></i> Controle de Produção</li>
+                        <li><i class="fas fa-clock"></i> Gestão de Qualidade</li>
+                        <li><i class="fas fa-clock"></i> Logística Integrada</li>
+                        <li><i class="fas fa-clock"></i> Manutenção Preventiva</li>
+                    </ul>
+                    <div class="solution-actions">
+                        <button class="btn-solution" disabled>
+                            <i class="fas fa-bell"></i>
+                            Avise-me
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Solução 3 (Em breve) -->
+                <div class="solution-card coming-soon">
+                    <div class="solution-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <span class="coming-soon-badge">EM BREVE</span>
+                    <h3>Restaurante+</h3>
+                    <p class="solution-description">
+                        Sistema completo para restaurantes, bares e delivery.
+                    </p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-clock"></i> Comandas Digitais</li>
+                        <li><i class="fas fa-clock"></i> Delivery Integrado</li>
+                        <li><i class="fas fa-clock"></i> Controle de Mesa</li>
+                        <li><i class="fas fa-clock"></i> Receitas e Custos</li>
+                    </ul>
+                    <div class="solution-actions">
+                        <button class="btn-solution" disabled>
+                            <i class="fas fa-bell"></i>
+                            Avise-me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="features" class="section-features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">RECURSOS AVANÇADOS</span>
+                <h2 class="section-title">Tudo que Sua Empresa Precisa</h2>
+            </div>
+            
+            <div class="features-tabs">
+                <div class="tabs-header">
+                    <button class="tab-button active" data-tab="financeiro">
+                        <i class="fas fa-chart-line"></i>
+                        Financeiro Inteligente
+                    </button>
+                    <button class="tab-button" data-tab="vendas">
+                        <i class="fas fa-cash-register"></i>
+                        Vendas & PDV
+                    </button>
+                    <button class="tab-button" data-tab="estoque">
+                        <i class="fas fa-boxes"></i>
+                        Controle de Estoque
+                    </button>
+                    <button class="tab-button" data-tab="relatorios">
+                        <i class="fas fa-chart-pie"></i>
+                        Relatórios
+                    </button>
+                </div>
+                
+                <div class="tabs-content">
+                    <!-- Tab 1 -->
+                    <div class="tab-pane active" id="financeiro">
+                        <div class="feature-detail">
+                            <div class="feature-visual">
+                                <div class="finance-dashboard-preview">
+                                    <div class="chart-bar" style="height: 60%;"></div>
+                                    <div class="chart-bar" style="height: 80%;"></div>
+                                    <div class="chart-bar" style="height: 45%;"></div>
+                                    <div class="chart-bar" style="height: 90%;"></div>
+                                    <div class="chart-bar" style="height: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="feature-info">
+                                <h3>Cálculo Inteligente de Lucro</h3>
+                                <p>Nosso sistema separa automaticamente:</p>
+                                <ul class="feature-list">
+                                    <li>
+                                        <strong>Valor de Reinvestimento:</strong>
+                                        <span>Para recomprar os produtos vendidos</span>
+                                    </li>
+                                    <li>
+                                        <strong>Impostos:</strong>
+                                        <span>Cálculo automático por venda</span>
+                                    </li>
+                                    <li>
+                                        <strong>Lucro Real:</strong>
+                                        <span>O que realmente sobra para o empresário</span>
+                                    </li>
+                                    <li>
+                                        <strong>Custos Operacionais:</strong>
+                                        <span>Porcentagem configurável</span>
+                                    </li>
+                                </ul>
+                                <div class="feature-example">
+                                    <h4>Exemplo Prático:</h4>
+                                    <div class="example-calculation">
+                                        <div class="calc-step">
+                                            <span>Venda: R$ 140,00</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="calc-step">
+                                            <span>- Custo (R$ 60,00)</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="calc-step">
+                                            <span>- Impostos (R$ 9,80)</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="calc-step">
+                                            <span>- Custos Operacionais (R$ 14,00)</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="calc-step final">
+                                            <span>= Lucro Real: R$ 56,20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 2 -->
+                    <div class="tab-pane" id="vendas">
+                        <div class="feature-detail">
+                            <div class="feature-visual">
+                                <div class="sales-preview">
+                                    <div class="product-item">
+                                        <div class="product-name">Vinho Premium</div>
+                                        <div class="product-price">R$ 140,00</div>
+                                    </div>
+                                    <div class="product-item">
+                                        <div class="product-name">Queijo Especial</div>
+                                        <div class="product-price">R$ 55,00</div>
+                                    </div>
+                                    <div class="sales-total">
+                                        <span>Total: R$ 195,00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-info">
+                                <h3>Sistema de Vendas Completo</h3>
+                                <p>Gerencie vendas de forma eficiente:</p>
+                                <ul class="feature-list">
+                                    <li>
+                                        <strong>PDV Integrado:</strong>
+                                        <span>Venda rápida com código de barras</span>
+                                    </li>
+                                    <li>
+                                        <strong>Multi-formas de Pagamento:</strong>
+                                        <span>Dinheiro, cartão, PIX, parcelado</span>
+                                    </li>
+                                    <li>
+                                        <strong>Nota Fiscal Eletrônica:</strong>
+                                        <span>Integração com SEFAZ automática</span>
+                                    </li>
+                                    <li>
+                                        <strong>Controle de Comissões:</strong>
+                                        <span>Cálculo automático para vendedores</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content system-selector">
+            <button class="close-modal">&times;</button>
+            
+            <div class="login-header">
+                <div class="logo-login">
+                    <i class="fas fa-cube"></i>
+                    <span>JCSystem</span>
+                </div>
+                <h2>Acessar Sistema</h2>
+                <p>Selecione qual sistema deseja acessar</p>
+            </div>
+            
+            <div class="system-selection">
+                <div class="system-option active" data-system="comercio">
+                    <div class="system-icon">
+                        <i class="fas fa-store-alt"></i>
+                    </div>
+                    <div class="system-info">
+                        <h3>Comércio+ Manager</h3>
+                        <p>Sistema de gestão comercial</p>
+                        <span class="system-status">
+                            <i class="fas fa-circle online"></i>
+                            Online
+                        </span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="system-option" data-system="industria" disabled>
+                    <div class="system-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="system-info">
+                        <h3>Indústria+ Pro</h3>
+                        <p>Em breve - Sistema industrial</p>
+                        <span class="system-status">
+                            <i class="fas fa-circle offline"></i>
+                            Em Desenvolvimento
+                        </span>
+                    </div>
+                    <i class="fas fa-lock"></i>
+                </div>
+                
+                <div class="system-option" data-system="restaurante" disabled>
+                    <div class="system-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="system-info">
+                        <h3>Restaurante+</h3>
+                        <p>Em breve - Sistema para restaurantes</p>
+                        <span class="system-status">
+                            <i class="fas fa-circle offline"></i>
+                            Em Desenvolvimento
+                        </span>
+                    </div>
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+            
+            <!-- Formulário de Login -->
+            <div class="login-form-container">
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <button type="button" class="show-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember">
+                            <span>Lembrar-me</span>
+                        </label>
+                        <a href="#forgot-password" class="forgot-password">
+                            Esqueceu a senha?
+                        </a>
+                    </div>
+                    
+                    <button type="submit" class="btn-login-submit">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Entrar no Sistema
+                    </button>
+                    
+                    <div class="login-divider">
+                        <span>OU</span>
+                    </div>
+                    
+                    <a href="#register" class="btn-register">
+                        <i class="fas fa-user-plus"></i>
+                        Criar Nova Conta
+                    </a>
+                </form>
+                
+                <div class="login-footer">
+                    <p>Precisa de ajuda? <a href="#support">Entre em contato com nosso suporte</a></p>
+                    <p class="security-info">
+                        <i class="fas fa-shield-alt"></i>
+                        Conexão segura • SSL 256-bit
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contato -->
+    <section id="contact" class="section-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Fale Conosco</h2>
+                    <p>Tem dúvidas? Precisa de uma demonstração personalizada? Entre em contato!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>E-mail</h4>
+                                <a href="mailto:suporte@jcsystem.com">suporte@jcsystem.com</a>
+                                <a href="mailto:vendas@jcsystem.com">vendas@jcsystem.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Telefone</h4>
+                                <a href="tel:+5511999999999">(11) 99999-9999</a>
+                                <p>Segunda a Sexta, 9h às 18h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4>Chat Online</h4>
+                                <button class="btn-chat" id="openChat">
+                                    <i class="fas fa-comment-dots"></i>
+                                    Iniciar Conversa
+                                </button>
+                                <p>Resposta em até 5 minutos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <h3>Envie sua Mensagem</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Nome Completo</label>
+                                <input type="text" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactCompany">Empresa</label>
+                                <input type="text" id="contactCompany">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail">E-mail</label>
+                                <input type="email" id="contactEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Telefone</label>
+                                <input type="tel" id="contactPhone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Assunto</label>
+                            <select id="contactSubject">
+                                <option value="">Selecione...</option>
+                                <option value="demo">Agendar Demonstração</option>
+                                <option value="support">Suporte Técnico</option>
+                                <option value="sales">Informações Comerciais</option>
+                                <option value="partnership">Parcerias</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Mensagem</label>
+                            <textarea id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-contact-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>JCSystem</span>
+                    </div>
+                    <p>Soluções inteligentes para gestão empresarial.</p>
+                    <p class="copyright">© 2023 JCSystem. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#comercio-plus">Comércio+ Manager</a></li>
+                        <li><a href="#">Indústria+ Pro (em breve)</a></li>
+                        <li><a href="#">Restaurante+ (em breve)</a></li>
+                        <li><a href="#">Soluções Personalizadas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#help">Central de Ajuda</a></li>
+                        <li><a href="#docs">Documentação</a></li>
+                        <li><a href="#tutorials">Tutoriais</a></li>
+                        <li><a href="#status">Status do Sistema</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Receba novidades e dicas de gestão.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidade</a>
+                    <a href="#terms">Termos de Uso</a>
+                    <a href="#cookies">Cookies</a>
+                    <a href="#sitemap">Mapa do Site</a>
+                </div>
+                
+                <div class="footer-badges">
+                    <span class="badge-security">
+                        <i class="fas fa-shield-alt"></i>
+                        Seguro
+                    </span>
+                    <span class="badge-ssl">
+                        <i class="fas fa-lock"></i>
+                        SSL
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chat-info">
+                <h5>Suporte JCSystem</h5>
+                <span class="chat-status online">
+                    <i class="fas fa-circle"></i>
+                    Online
+                </span>
+            </div>
+            <button class="chat-close">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message bot">
+                <div class="message-content">Olá! Sou o assistente da JCSystem. Como posso ajudá-lo hoje?</div>
+                <div class="message-time">Agora</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

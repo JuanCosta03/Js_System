@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCSystem | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e variáveis */
+        :root {
+            --blue-primary: #0000FF;
+            --blue-dark: #0000CC;
+            --blue-light: #3366FF;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F7;
+            --gray-medium: #86868B;
+            --gray-dark: #1D1D1F;
+            --black: #000000;
+            --transition: all 0.3s ease;
+            --radius: 8px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background com blur */
+        .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            filter: blur(20px);
+            opacity: 0.8;
+            z-index: 0;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        /* Login container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo minimalista */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--blue-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .logo-icon i {
+            color: var(--white);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-dark);
+            letter-spacing: -0.5px;
+        }
+
+        /* Header */
+        .login-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .login-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--gray-dark);
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            color: var(--gray-medium);
+            font-size: 14px;
+        }
+
+        /* Form */
+        .login-form {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-dark);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-size: 15px;
+            background: var(--white);
+            color: var(--gray-dark);
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-medium);
+        }
+
+        /* Checkbox minimalista */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-input {
+            display: none;
+        }
+
+        .checkbox-custom {
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .checkbox-input:checked + .checkbox-custom {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+        }
+
+        .checkbox-input:checked + .checkbox-custom::after {
+            content: '✓';
+            color: var(--white);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .checkbox-label {
+            font-size: 13px;
+            color: var(--gray-dark);
+        }
+
+        /* Links */
+        .form-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .forgot-password {
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Botões */
+        .btn-primary {
+            width: 100%;
+            background: var(--blue-primary);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+        }
+
+        .btn-secondary {
+            width: 100%;
+            background: transparent;
+            color: var(--gray-dark);
+            border: 1px solid var(--gray-light);
+            padding: 12px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-light);
+        }
+
+        .divider {
+            text-align: center;
+            position: relative;
+            margin: 25px 0;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gray-light);
+        }
+
+        .divider-text {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 15px;
+            color: var(--gray-medium);
+            font-size: 12px;
+            font-weight: 500;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .signup-link {
+            font-size: 13px;
+            color: var(--gray-medium);
+        }
+
+        .signup-link a {
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: var(--gray-medium);
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        /* Versão info */
+        .version-info {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 11px;
+            color: var(--gray-medium);
+            opacity: 0.6;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 25px;
+            }
+            
+            .login-title {
+                font-size: 24px;
+            }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .logo-icon i {
+                font-size: 24px;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .content-wrapper {
+                padding: 15px;
+            }
+        }
+
+        /* Animações sutis */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Estilos para botão Google simplificado */
+        .google-icon {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: 
+                conic-gradient(
+                    from -45deg,
+                    #ea4335 110deg,
+                    #4285f4 90deg 180deg,
+                    #34a853 180deg 270deg,
+                    #fbbc05 270deg
+                ) 73% 55%/150% 150% no-repeat;
+            border-radius: 50%;
+        }
+
+        /* Foco mais sutil */
+        .form-input:focus {
+            border-color: var(--blue-primary);
+            box-shadow: none;
+        }
+
+        /* Hover sutil nos inputs */
+        .form-input:hover {
+            border-color: var(--gray-medium);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background com blur -->
+    <div class="background-blur"></div>
+    
+    <div class="content-wrapper">
+        <div class="login-container">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <div class="logo-text">JCSystem</div>
+            </div>
+
+            <!-- Header -->
+            <div class="login-header">
+                <h1 class="login-title">Welcome back</h1>
+                <p class="login-subtitle">Welcome back! Please enter your details.</p>
+            </div>
+
+            <!-- Formulário -->
+            <form class="login-form" id="loginForm">
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" 
+                           id="email" 
+                           class="form-input" 
+                           placeholder="Enter your email"
+                           required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" 
+                           id="password" 
+                           class="form-input" 
+                           placeholder="Enter your password"
+                           required>
+                </div>
+
+                <!-- Links -->
+                <div class="form-links">
+                    <label class="remember-me">
+                        <input type="checkbox" class="checkbox-input" id="remember">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Remember for 30 days</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password</a>
+                </div>
+
+                <!-- Botão Sign In -->
+                <button type="submit" class="btn-primary">
+                    Sign in
+                </button>
+            </form>
+
+            <!-- Divisor -->
+            <div class="divider">
+                <span class="divider-text">Or</span>
+            </div>
+
+            <!-- Botão Google -->
+            <button class="btn-secondary" id="googleSignIn">
+                <div class="google-icon"></div>
+                Sign in with Google
+            </button>
+
+            <!-- Footer -->
+            <div class="login-footer">
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign up</a>
+                </div>
+                
+                <div class="copyright">
+                    © 2023 JCSystem. All rights reserved.
+                </div>
+                
+                <div class="version-info">
+                    Version 1.0.0
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('JCSystem Login loaded 🔐');
+            
+            // Toggle password visibility (simplificado)
+            const passwordInput = document.getElementById('password');
+            
+            // Adiciona evento de duplo clique para mostrar/ocultar senha
+            if (passwordInput) {
+                passwordInput.addEventListener('dblclick', function() {
+                    this.type = this.type === 'password' ? 'text' : 'password';
+                    setTimeout(() => {
+                        this.type = 'password';
+                    }, 2000); // Volta a esconder após 2 segundos
+                });
+            }
+            
+            // Formulário de login
+            const loginForm = document.getElementById('loginForm');
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('email').value.trim();
+                    const password = document.getElementById('password').value;
+                    const submitBtn = this.querySelector('.btn-primary');
+                    
+                    // Validação básica
+                    if (!email || !password) {
+                        showMessage('Please fill in all fields', 'error');
+                        return;
+                    }
+                    
+                    // Validação de email
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showMessage('Please enter a valid email', 'error');
+                        return;
+                    }
+                    
+                    // Simula login
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Signing in...';
+                    
+                    setTimeout(() => {
+                        // Credenciais de teste
+                        const testUsers = [
+                            { email: 'admin@jcsystem.com', password: 'admin123' },
+                            { email: 'test@jcsystem.com', password: 'test123' },
+                            { email: 'user@jcsystem.com', password: 'user123' }
+                        ];
+                        
+                        const isValid = testUsers.some(user => 
+                            user.email === email && user.password === password
+                        );
+                        
+                        if (isValid) {
+                            showMessage('Login successful! Redirecting...', 'success');
+                            setTimeout(() => {
+                                window.location.href = 'index.html';
+                            }, 1500);
+                        } else {
+                            showMessage('Invalid email or password', 'error');
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Sign in';
+                        }
+                    }, 1000);
+                });
+            }
+            
+            // Botão Google
+            document.getElementById('googleSignIn').addEventListener('click', function() {
+                showMessage('Google Sign-In coming soon', 'info');
+            });
+            
+            // Links
+            document.querySelector('.forgot-password').addEventListener('click', function(e) {
+                e.preventDefault();
+                showMessage('Password reset feature coming soon', 'info');
+            });
+            
+            document.querySelector('.signup-link a').addEventListener('click', function(e) {
+                e.preventDefault();
+                showMessage('Sign up feature coming soon', 'info');
+            });
+            
+            // Sistema de mensagens simples
+            function showMessage(message, type) {
+                // Remove mensagem anterior
+                const existingMsg = document.querySelector('.message-alert');
+                if (existingMsg) {
+                    existingMsg.remove();
+                }
+                
+                // Cria nova mensagem
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message-alert message-${type}`;
+                messageDiv.textContent = message;
+                
+                // Adiciona estilos
+                const styles = document.createElement('style');
+                styles.textContent = `
+                    .message-alert {
+                        position: fixed;
+                        top: 20px;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-100px);
+                        background: white;
+                        padding: 12px 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                        font-size: 14px;
+                        font-weight: 500;
+                        z-index: 9999;
+                        transition: transform 0.3s ease;
+                        border-left: 4px solid #0000FF;
+                    }
+                    
+                    .message-alert.show {
+                        transform: translateX(-50%) translateY(0);
+                    }
+                    
+                    .message-error {
+                        border-left-color: #FF1744;
+                    }
+                    
+                    .message-success {
+                        border-left-color: #00C853;
+                    }
+                    
+                    .message-info {
+                        border-left-color: #0000FF;
+                    }
+                `;
+                
+                if (!document.querySelector('#message-styles')) {
+                    styles.id = 'message-styles';
+                    document.head.appendChild(styles);
+                }
+                
+                document.body.appendChild(messageDiv);
+                
+                // Mostra
+                setTimeout(() => {
+                    messageDiv.classList.add('show');
+                }, 10);
+                
+                // Remove após 3 segundos
+                setTimeout(() => {
+                    messageDiv.classList.remove('show');
+                    setTimeout(() => {
+                        if (messageDiv.parentNode) {
+                            messageDiv.remove();
+                        }
+                    }, 300);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
